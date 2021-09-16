@@ -161,8 +161,6 @@ def submit():
             }
     submit_form = requests.post(base + "/home/submit",headers=submit_form_headers, cookies=Merge(anti_forgery, login_cookies), data="Type=S&FirstName=EDDIE&LastName=XIAO&Email=eddiex4%40nycstudents.net&Location=13K430&CaseId=1384268&EmployeeNumber=234154722&Phone=&Answer1=0&Answer2=0&Answer3=0" )
     get_sucess = requests.get(base + "/home/success?Type=S&FirstName=EDDIE&LastName=XIAO&Email=eddiex4%40nycstudents.net&Location=13K430&CaseId=0&EmployeeNumber=234154722&Phone=&Answer1=0&Answer2=0&Answer3=0", cookies= Merge(anti_forgery, login_cookies))
-    with open("final", "w+") as fp:
-        fp.write( get_sucess.text) 
 
     return submit_form.text
 print(submit())
