@@ -1,5 +1,7 @@
 # How this Page Works:
 
+### This is a more in depth page about what the python script does
+
 ## Getting Cookies for DOE login page
 -------------------------------------------------------
 ```HTTP 
