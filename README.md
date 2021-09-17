@@ -22,8 +22,7 @@ password = "Password123"
 
 ### Using AWS
 0. Create an aws account, the free tier will work for this
-1. Clone the repo `git clone  https://github.com/ex4722/Auto_screen.git`
-2. Move into that directory `cd Auto_screen`
+1. Download the upload.zip file only
 3. On the aws page create a new function at `https://console.aws.amazon.com/lambda/home?region=us-east-1#/create/function`
 4. Select the normal code package, select python3.9 from the drop-down menu, and then create the function
 ![image](https://user-images.githubusercontent.com/77011982/133705679-fb50d70e-57c5-4cd3-8fda-0738fdccd376.png)
