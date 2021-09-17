@@ -3,8 +3,8 @@ import os
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 
-
 load_dotenv()
+
 def Merge(dict1, dict2):
     res = {**dict1, **dict2}
     return res
@@ -95,8 +95,10 @@ def submit():
 
     submit_form = requests.post(base + "/home/submit",headers=post_header1, cookies=Merge(anti_forgery, login_cookies), data="Type=S&FirstName=EDDIE&LastName=XIAO&Email=eddiex4%40nycstudents.net&Location=13K430&CaseId=1384268&EmployeeNumber=234154722&Phone=&Answer1=0&Answer2=0&Answer3=0")
 
-    get_sucess = requests.get(base + f"/home/success?Type=S&FirstName={os.environ.get('FirstName')}&LastName={os.environ.get('LastName')}&Email={os.environ.get('FirstName') + os.environ.get('LastName')[0] + os.environ.get('OSIS')[0]}%40nycstudents.net&Location=13K430&CaseId=0&EmployeeNumber={os.environ.get('OSIS')}&Phone=&Answer1=0&Answer2=0&Answer3=0", cookies= Merge(anti_forgery, login_cookies))
-
+    # get_sucess = requests.get(base + f"/home/success?Type=S&FirstName={os.environ.get('FirstName')}&LastName={os.environ.get('LastName')}&Email={os.environ.get('FirstName') + os.environ.get('LastName')[0] + os.environ.get('OSIS')[0]}%40nycstudents.net&Location=13K430&CaseId=0&EmployeeNumber={os.environ.get('OSIS')}&Phone=&Answer1=0&Answer2=0&Answer3=0", cookies= Merge(anti_forgery, login_cookies))
+    # url = (base + f"/home/success?Type=S&FirstName={os.environ.get('FirstName')}&LastName={os.environ.get('LastName')}&Email={os.environ.get('FirstName') + os.environ.get('LastName')[0] + os.environ.get('OSIS')[0]}%40nycstudents.net&Location=13K430&CaseId=0&EmployeeNumber={os.environ.get('OSIS')}&Phone=&Answer1=0&Answer2=0&Answer3=0" )
     return submit_form.text
+
+
 print(submit())
 
