@@ -1,6 +1,6 @@
 # Auto Health Screen
 Automatic System to login to the DOE portal and then fill out the daily health screening form.
-TWo methods of installation as running this locally a waste of time. Using something like AWS lambda can be more efficant and convienent
+TWo methods of installation as running this locally is a waste of time. Using something like AWS lambda can be more efficient and convenient
 
 
 ## Installation and usage
@@ -21,10 +21,29 @@ password = "Password123"
 7. Profit
 
 ### Using AWS
-0. Create a aws account, the free tier will work for this
+0. Create an aws account, the free tier will work for this
 1. Clone the repo `git clone  https://github.com/ex4722/Auto_screen.git`
 2. Move into that directory `cd Auto_screen`
-3. 
+3. On the aws page create a new function at `https://console.aws.amazon.com/lambda/home?region=us-east-1#/create/function`
+4. Select the normal code package, select python3.9 from the drop-down menu, and then create the function
+![image](https://user-images.githubusercontent.com/77011982/133705679-fb50d70e-57c5-4cd3-8fda-0738fdccd376.png)
+5. Select **Upload From** > **.zip** and select the file named upload.zip
+![image](https://user-images.githubusercontent.com/77011982/133706599-da1d1429-be38-48d8-8415-1ffdf0770751.png)
+
+7. Select **Configuration** > **Environment variables** > **Edit**
+![image](https://user-images.githubusercontent.com/77011982/133706391-8d747e4a-2c8c-4de6-aa58-e5333b8e9c2e.png)
+
+8. Add in FirstName, LastName, OSIS, password and username (Casing matters here) 
+![image](https://user-images.githubusercontent.com/77011982/133706485-5f0be623-8621-47e3-a70d-f4f92f3002ec.png)
+
+9. On the home dashboard select **Add Trigger** and search for **CloudWatch Events** 
+![image](https://user-images.githubusercontent.com/77011982/133706703-6a613edb-ac00-4c16-892a-cd13b5b11e42.png)
+
+10. Create a new rule, name it anything, Schedule Expression for Rule type, and Set Schedule Expression to `cron(0 10 * * ? *)`. The 10 in this equation means 10AM in UTC time which is 6AM in GMT-4. Change this number to suit your needs 
+
+![image](https://user-images.githubusercontent.com/77011982/133706858-c25acd84-37cf-4bc7-8722-1e9a013ed091.png)
+
+11. Fun and Profit 
 
 ## How it works 
 Check out the how-it-works page to see an in-depth explanation
