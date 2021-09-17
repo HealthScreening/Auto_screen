@@ -1,7 +1,6 @@
 # Auto Health Screen
 Automatic System to login to the DOE portal and then fill out the daily health screening form.
-TWo methods of installation as running this locally is a waste of time. Using something like AWS lambda can be more efficient and convenient
-
+Option to run the code locally or be hip and cool and use AWS Lambda to fully automate this. Using aws you can fill it out once and never do it again
 
 ## Installation and usage
 ### Running this locally:
