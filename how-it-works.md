@@ -10,7 +10,7 @@ Cookie: ai_user=<TIME> _ga=<NO CLUE> ; _gid=<NO CLUE>
 ```HTTP 
 RESPONSE /home/login
 Host: healthscreening.schools.nyc
-RESPONCE: HTTP/1.1 302 Found 
+RESPONSE: HTTP/1.1 302 Found 
 Location: https://idp.nycenet.edu/mga/sps/oauth/oauth20/authorize?client_id=<REDACTED>&redirect_uri=https%3A%2F%2Fhealthscreening.schools.nyc%2Fauthorization-code%2Fcallback&response_type=code%20id_token&scope=openid%20profile&response_mode=form_post&nonce=<REDACTED>&state=<REDACTED>&x-client-SKU=ID_NETSTANDARD2_0&x-client-ver=5.5.0.0
 Set-Cookie: .AspNetCore.OpenIdConnect.Nonce.<RANDOM B64 BLOB>=N
 Set-Cookie: .AspNetCore.Correlation.OpenIdConnect.<RANDOM B64 BLOB>=N;
@@ -104,11 +104,3 @@ Host: healthscreening.schools.nyc
 HTTP/1.1 302 Found
 Location: /
 ```
-
-
-
-
-
-
-
-
